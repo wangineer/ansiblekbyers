@@ -1,0 +1,27 @@
+---
+#3a. Create a Playbook that contains a single Ansible Play. Provide a "name"
+# for this Play. Additionally, set the "hosts" for this Play to "localhost".
+# Finally, create a task using the "debug" module. This task should print the
+# "ansible_host" variable to stdout. Run this Playbook, your output should
+# look similar to the following (use the inventory you created in exercise2c):
+#
+#$ ansible-playbook exercise3a.yaml -i inventory.ini
+#
+#PLAY [Exercise 3a] *******************************************
+#
+#TASK [Gathering Facts] ***************************************
+#ok: [localhost]
+#
+#TASK [debug] *************************************************
+#ok: [localhost] => {
+#    "ansible_host": "127.0.0.1"
+#}
+#
+#PLAY RECAP  **************************************************
+#localhost: ok=2 changed=0 failed=0 skipped=0 rescued=0 ignored=0
+
+- name: Exercise 3a
+  hosts: localhost
+  tasks:
+    - ansible.builtin.debug:
+        var: ansible_host

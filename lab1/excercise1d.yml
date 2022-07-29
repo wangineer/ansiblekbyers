@@ -1,0 +1,6 @@
+---
+#1d. Duplicate the dictionary created in the previous task except this time
+# use the compressed YAML format. Once again, print the contents of the file
+#  using print_yaml.py. The result should match the result of exercise 1c.
+
+{'rtr1': {'host': 'cisco1.lasthop.io', 'username': 'pyclass', 'password': 'somepass', 'device_type': 'cisco_ios', 'use_session_log': 'false'}}

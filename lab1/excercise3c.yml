@@ -1,0 +1,60 @@
+---
+#3c Add a second Play to the Playbook. This Play should operate against
+# the "cisco" group, and should not gather facts. Within this Play create
+# two tasks, the first task should use the debug module to print the "ansible_connection"
+# variable. The second task should use the debug module to print the "ansible_host" variable.
+# Your final output should be similar to the following:
+
+#$ ansible-playbook exercise3c.yaml -i inventory.ini
+#
+#PLAY [Exercise 3a] ********************************************
+#
+#TASK [Gathering Facts] ****************************************
+#ok: [localhost]
+#
+#TASK [debug] **************************************************
+#ok: [localhost] => {
+#    "ansible_host": "127.0.0.1"
+#}
+#
+#PLAY [Another Play] *******************************************
+#
+#TASK [debug] **************************************************
+#ok: [cisco1] => {
+#    "ansible_connection": "network_cli"
+#}
+#ok: [cisco2] => {
+#    "ansible_connection": "network_cli"
+#}
+#
+#TASK [debug] **************************************************
+#ok: [cisco1] => {
+#    "ansible_host": "cisco1.lasthop.io"
+#}
+#ok: [cisco2] => {
+#    "ansible_host": "cisco2.lasthop.io"
+#}
+#
+#PLAY RECAP ****************************************************
+#cisco1: ok=2 changed=0 failed=0 skipped=0 rescued=0 ignored=0
+#cisco2: ok=2 changed=0 failed=0 skipped=0 rescued=0 ignored=0
+#localhost: ok=2 changed=0 failed=0 skipped=0 rescued=0 ignored=0
+
+
+
+- name: Exercise 3c
+  hosts: localhost
+  gather_facts: False
+  tasks:
+    - ansible.builtin.debug:
+        var: ansible_host
+
+- name: Excercise 3c - Another Play
+  hosts: cisco
+  gather_facts: False
+  tasks:
+    - ansible.builtin.debug:
+        var: ansible_connection
+
+    - ansible.builtin.debug:
+        var: ansible_host

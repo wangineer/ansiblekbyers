@@ -1,0 +1,23 @@
+#ignore all python compiled files
+*.pyc
+.ansible.cfg
+.bash_history
+.bash_logout
+.bash_profile
+.bashrc
+.emacs
+.gitconfig
+.netmiko.yml
+.ssh/
+.vim/
+.vimrc
+
+#ignore static binaries/libs
+**/.ansible
+**/.cache
+**/ansible-extras
+**/napalm-ansible
+**/netmiko_tools
+**/VENV
+**/ntc-templates
+**/python-libs

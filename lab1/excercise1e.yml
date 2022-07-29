@@ -1,0 +1,30 @@
+---
+# 1e. Create a YAML file that is a nested data structure. The highest level data
+# structure should be a dictionary with a key-name of "network_devices". The value
+# corresponding to this key should be a two-element list. Each element of this
+# list should contain a dictionary with six key-value pairs (host, username, password,
+# device_type, use_session_log, ip_addresses). The ip_addresses key should point to
+# a list of IP addresses that each network device contains (just make up three IP
+# addresses for each device).
+
+# Once again, use the python "print_yaml.py" script to print the contents of the YAML file to stdout.
+
+network_devices:
+  - host: cisco1.lasthop.io
+    username: pyclass
+    password: somepass
+    device_type: cisco_ios
+    use_session_log: false
+    ip_addresses:
+      - 10.0.0.1
+      - 10.0.0.2
+      - 10.0.0.3
+  - host: cisco2.lasthop.io
+    username: pyclass
+    password: somepass
+    device_type: cisco_ios
+    use_session_log: false
+    ip_addresses:
+      - 10.1.1.1
+      - 10.1.1.2
+      - 10.1.1.3
